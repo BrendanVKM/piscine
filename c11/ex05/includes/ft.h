@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 14:22:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 14:25:52 by bvictoir         ###   ########.fr       */
+/*   Created: 2024/02/28 09:38:51 by bvictoir          #+#    #+#             */
+/*   Updated: 2024/02/28 15:00:14 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-/*
-void printt(int x)
-{
-	printf("%d\n", x);
-}
-*/
-void	ft_foreach(int *tab, int length, void (*f)(int))
-{
-	int	i;
+#ifndef FT_H
 
-	i = 0;
-	while (i < length)
-		f(tab[i++]);
-}
-/*
-int main(void)
-{
-	int a[] = {41, 4, 5, 8784, 21, 7};
-	int *x = a;
-	ft_foreach(x, 6, printt);
-	return 0;
-}
-*/
+# define FT_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+
+int		op_valid(char *op);
+int		ft_atoi(char *str);
+int		error(int op, int y);
+int		calc(int x, int op, int y);
+
+void	ft_putnbr(int nb);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+
+#endif

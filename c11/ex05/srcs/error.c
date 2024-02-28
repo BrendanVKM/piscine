@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 14:22:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 14:25:52 by bvictoir         ###   ########.fr       */
+/*   Created: 2024/02/28 14:07:22 by bvictoir          #+#    #+#             */
+/*   Updated: 2024/02/28 14:36:32 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-/*
-void printt(int x)
-{
-	printf("%d\n", x);
-}
-*/
-void	ft_foreach(int *tab, int length, void (*f)(int))
-{
-	int	i;
+#include "ft.h"
 
-	i = 0;
-	while (i < length)
-		f(tab[i++]);
-}
-/*
-int main(void)
+int	error(int op, int y)
 {
-	int a[] = {41, 4, 5, 8784, 21, 7};
-	int *x = a;
-	ft_foreach(x, 6, printt);
-	return 0;
+	if (op < 0)
+	{
+		ft_putstr("0\n");
+		return (-1);
+	}
+	if (op == 2 && !y)
+	{
+		ft_putstr("Stop : division by zero\n");
+		return (-1);
+	}
+	if (op == 4 && !y)
+	{
+		ft_putstr("Stop : modulo by zero\n");
+		return (-1);
+	}
+	return (0);
 }
-*/

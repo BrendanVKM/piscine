@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 14:22:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 14:25:52 by bvictoir         ###   ########.fr       */
+/*   Created: 2024/02/28 09:59:29 by bvictoir          #+#    #+#             */
+/*   Updated: 2024/02/28 10:03:11 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-/*
-void printt(int x)
-{
-	printf("%d\n", x);
-}
-*/
-void	ft_foreach(int *tab, int length, void (*f)(int))
-{
-	int	i;
+#include "ft.h"
 
-	i = 0;
-	while (i < length)
-		f(tab[i++]);
-}
-/*
-int main(void)
+void	ft_putchar(char c)
 {
-	int a[] = {41, 4, 5, 8784, 21, 7};
-	int *x = a;
-	ft_foreach(x, 6, printt);
-	return 0;
+	write(1, &c, 1);
 }
-*/
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	long	n;
+
+	n = (long)nb;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	ft_putchar('0' + (n % 10));
+}
+

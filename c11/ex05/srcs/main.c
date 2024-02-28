@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 14:22:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 14:25:52 by bvictoir         ###   ########.fr       */
+/*   Created: 2024/02/28 09:49:04 by bvictoir          #+#    #+#             */
+/*   Updated: 2024/02/28 14:57:57 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-/*
-void printt(int x)
-{
-	printf("%d\n", x);
-}
-*/
-void	ft_foreach(int *tab, int length, void (*f)(int))
-{
-	int	i;
+#include "ft.h"
 
-	i = 0;
-	while (i < length)
-		f(tab[i++]);
-}
-/*
-int main(void)
+int	main(int ac, char **av)
 {
-	int a[] = {41, 4, 5, 8784, 21, 7};
-	int *x = a;
-	ft_foreach(x, 6, printt);
-	return 0;
+	int	op;
+	int	x;
+	int	y;
+
+	op = op_valid(av[2]);
+	x = ft_atoi(av[1]);
+	y = ft_atoi(av[3]);
+	if (ac != 4)
+		return (0);
+	if (error(op, y))
+		return (0);
+	ft_putnbr(calc(x, op, y));
+	ft_putchar('\n');
+	return (0);
 }
-*/
