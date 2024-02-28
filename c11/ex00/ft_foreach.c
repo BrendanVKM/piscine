@@ -6,13 +6,13 @@
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:22:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 14:25:52 by bvictoir         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:20:16 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
 /*
+#include <stdio.h>
+
 void printt(int x)
 {
 	printf("%d\n", x);

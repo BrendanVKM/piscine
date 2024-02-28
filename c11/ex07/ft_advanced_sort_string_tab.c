@@ -6,7 +6,7 @@
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:04:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 15:20:14 by bvictoir         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:35:39 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 	char	*tmp;
 
 	i = 0;
-	while (tab[i + 1])
+	while (tab[i])
 	{
-		j = i + 1;
+		j = i;
 		while (tab[j])
 		{
 			if (cmp(tab[i], tab[j]) > 0)
