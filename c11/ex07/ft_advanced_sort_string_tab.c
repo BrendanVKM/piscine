@@ -6,10 +6,10 @@
 /*   By: bvictoir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:04:04 by bvictoir          #+#    #+#             */
-/*   Updated: 2024/02/28 17:35:39 by bvictoir         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:25:34 by bvictoir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include <unistd.h>
 
 int	ft_strcmp(char *s1, char *s2)
@@ -21,7 +21,7 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	return (s1[i] - s2[i]);
 }
-
+*/
 void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
@@ -29,16 +29,16 @@ void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 	char	*tmp;
 
 	i = 0;
-	while (tab[i])
+	while (tab[i + 1])
 	{
-		j = i;
-		while (tab[j])
+		j = 0;
+		while (tab[i + j + 1])
 		{
-			if (cmp(tab[i], tab[j]) > 0)
+			if (cmp(tab[j], tab[j + 1]) > 0)
 			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
+				tmp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = tmp;
 			}
 			j++;
 		}
